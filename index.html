@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="./css/built.css">
+    <title>Nasa APOD</title>
+</head>
+
+<body class="flex flex-col justify-center items-start max-w-2xl font-sans m-auto py-10 selection:bg-violet-100">
+    <div id="out" class="p-6">
+        <a :href="daily.data.hdurl" target="_blank"><img :src="daily.data.hdurl" alt="Astronomy Photo Of The Day" class="rounded-lg hover:cursor-pointer select-none"></a>
+        <div class="my-7 space-y-1">
+            <h2 class="text-2xl font-bold">{{ daily.data.title }}</h2>
+            <p class="text-sm sm:text-xs text-slate-500">Date: {{ daily.data.date }}</p>
+        </div>
+        <p class="text-base sm:text-sm">{{ daily.data.explanation }}</p>
+        <div class="my-7 space-y-3">
+            <span class="block text-sm font-medium">Request date <span class="opacity-50 text-xs ml-1">YYYY-MM-DD</span></span>
+            <input v-model="reqdate" placeholder="YYYY-MM-DD" type="text" value="2021-01-16" class="block px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400" />
+            <button class="text-sm bg-gray-900 hover:bg-gray-700 text-white font-semibold h-10 px-5 rounded-lg w-full flex items-center justify-center sm:w-auto mt-1" v-on:click="requestCustom">Make request</button>
+        </div>
+        <div class="my-7">
+            <a class="text-sm sm:text-xs opacity-50 hover:opacity-80" href="https://github.com/franceees/nasa-apod">This website was made by Rue, learn more here →</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
