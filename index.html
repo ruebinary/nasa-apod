@@ -20,8 +20,8 @@
         </div>
         <p class="text-base sm:text-sm">{{ daily.data.explanation }}</p>
         <div class="my-7 space-y-3">
-            <span class="block text-sm font-medium">Request date <span class="opacity-50 text-xs ml-1">YYYY-MM-DD</span></span>
-            <input v-model="reqdate" placeholder="YYYY-MM-DD" type="text" value="2021-01-16" class="block px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400" />
+            <span class="block text-base sm:text-sm font-medium">Request date <span class="opacity-50 text-sm sm:text-xs ml-1">YYYY-MM-DD</span></span>
+            <input v-model="reqdate" placeholder="YYYY-MM-DD" type="text" value="2021-01-16" class="block px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm w-full sm:w-auto placeholder-gray-400" />
             <button class="text-sm bg-gray-900 hover:bg-gray-700 text-white font-semibold h-10 px-5 rounded-lg w-full flex items-center justify-center sm:w-auto mt-1" v-on:click="requestCustom">Make request</button>
         </div>
         <div class="my-7">
